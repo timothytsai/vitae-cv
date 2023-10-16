@@ -1,0 +1,31 @@
+---
+title: "Create your CV using Vitae and Scholar (with help from RefmanageR)"
+description: |
+  A new article created using the Distill format.
+author:
+  - name: Timothy Tsai
+    affiliation: Marcus Institute for Aging Research
+    affiliation_url: https://www.marcusinstituteforaging.org/
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction
+
+This is a brief guide to demonstrate how to obtain publication data for use in a templated CV.
+
+We'll be using the `scholar` package to pull publication and presentation data from Google Scholar. Then we'll use `RefmanageR` to write this data to a `.bib` file.
+
+Then we will create an Rmarkdown file using the `vitae` template which will read the above publication info and format it into a table for presentation in your final document.
+
+## Getting your publications
+
+This workflow is predicated on your having a Google Scholar profile that is complete and correct. You can set up your profile at https://scholar.google.com/intl/en/scholar/citations.html.
+
+Once you have set up your profile, you will want to go through your citations and make sure they are correct - sometimes Google Scholar will associate publications to you in error if you share a name with another published author.
+
+Every Google Scholar profile is identified by a unique string. The `scholar` packages uses this to pull your citation data. You can find this string in your own profile URL.
